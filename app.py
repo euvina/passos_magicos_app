@@ -286,28 +286,6 @@ def show_analysis_page():
         plot_correlation_heatmap(df, multi_indicadores, display_in_streamlit=True) 
         
     else: 
-        # resetar conteúdo do menu lateral
-        st.sidebar.title("⚙️ Configurações")
-        
-        # Check if data is loaded in session state
-        if "data_loaded" not in st.session_state:
-            df, df_to_verify, df_removed, stats, outliers, initial_shape, final_shape = load_and_process_data(None)
-            st.session_state.df = df
-            st.session_state.stats = stats
-            st.session_state.data_loaded = True
-        else:
-            df = st.session_state.df
-            stats = st.session_state.stats
-
-        indicadores = ['INDE', 'IAN', 'IAA', 'IDA', 'IEG', 'IPP', 'IPV']
-        anos = df['ano'].unique()
-        
-        indicador = st.sidebar.radio("Indicador", indicadores)
-        ano = st.selectbox("Ano", anos)
-        excluir_zeros = st.checkbox("Excluir notas ZERO")
-        plot_destaque_alunos(df, indicador, ano, display_in_streamlit=True, remove_zero=excluir_zeros)
-        
-        # subtítulo
         st.write("---")
         st.subheader("👩🏾‍🦰 Visão Individual")
         # Selecione o aluno
