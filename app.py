@@ -134,7 +134,7 @@ def show_cover_page():
     st.write("""            
                 Aplicação para automatizar a análise de dados da **Associação Passos Mágicos**.<br><br>
                 **📍 Objetivos:** Facilitar a visualização dos dados de alunos, com foco em identificar padrões e outliers, além de auxiliar no desenvolvimento das Pesquisas Extensivas de Desenvolvimento Educacional (PEDE).<br>
-                **📗 Artigo:** [Passos Mágicos: a Educação como Agente de Mudança](link)<br>
+                **📗 Artigo:** [Passos Mágicos: a Educação como Agente de Mudança](https://medium.com/@viniplima/passos-mágicos-a-educação-como-agente-de-mudança-6d1c01f9b3b5)<br>
                 **🐈‍ Código:** [Repositório GitHub](https://github.com/euvina/passos_magicos_app)<br>
                 **👨‍💻 Autor:** [Vinícius Prado Lima](https://github.com/euvina)<br>
             """, unsafe_allow_html=True)
