@@ -285,9 +285,7 @@ def show_analysis_page():
         plot_correlation_heatmap(df, multi_indicadores, display_in_streamlit=True) 
         
     else: 
-        # resetar conteúdo do menu lateral
-        st.sidebar.title("⚙️ Configurações")
-        # Check if data is loaded in session state
+        # Checar se dados foram carregados
         if "data_loaded" not in st.session_state:
             df, df_to_verify, df_removed, stats, outliers, initial_shape, final_shape = load_and_process_data(None)
             st.session_state.df = df
@@ -298,9 +296,8 @@ def show_analysis_page():
             stats = st.session_state.stats
 
         indicadores = ['INDE', 'IAN', 'IAA', 'IDA', 'IEG', 'IPP', 'IPV']
-        anos = df['ano'].unique()
-        
-        indicador = st.sidebar.radio("Indicador", indicadores)
+        with st.expander("⚙️ Configurações"):
+            indicador = st.radio("Indicador", indicadores, horizontal=True
         
         st.write("---")
         st.subheader("👩🏾‍🦰 Visão Individual")
