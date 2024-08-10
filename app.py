@@ -163,7 +163,6 @@ def show_cover_page():
     st.write(stats)
     
 def show_analysis_page():
-# título
     st.title("Análise de Dados")
     
     if "data_loaded" in st.session_state:
@@ -286,6 +285,23 @@ def show_analysis_page():
         plot_correlation_heatmap(df, multi_indicadores, display_in_streamlit=True) 
         
     else: 
+        # resetar conteúdo do menu lateral
+        st.sidebar.title("⚙️ Configurações")
+        # Check if data is loaded in session state
+        if "data_loaded" not in st.session_state:
+            df, df_to_verify, df_removed, stats, outliers, initial_shape, final_shape = load_and_process_data(None)
+            st.session_state.df = df
+            st.session_state.stats = stats
+            st.session_state.data_loaded = True
+        else:
+            df = st.session_state.df
+            stats = st.session_state.stats
+
+        indicadores = ['INDE', 'IAN', 'IAA', 'IDA', 'IEG', 'IPP', 'IPV']
+        anos = df['ano'].unique()
+        
+        indicador = st.sidebar.radio("Indicador", indicadores)
+        
         st.write("---")
         st.subheader("👩🏾‍🦰 Visão Individual")
         # Selecione o aluno
