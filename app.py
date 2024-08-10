@@ -293,21 +293,19 @@ def show_analysis_page():
             indicadores = ['INDE', 'IAN', 'IAA', 'IDA', 'IEG', 'IPP', 'IPV']
             agrupamentos = {'Ano': 'ano',
                             'Grupo': 'grupo_fase',
-                            'Fase': 'fase',
+                            'Fase': 'fase', 
                             'Pedra': 'pedra',
                             'Ponto de Virada': 'ponto_virada',
                             'Atenção': 'atencao',
                             'Destaque': 'destaque'}
-        # resetar conteúdo do menu lateral
-        st.sidebar.title("⚙️ Configurações")
-        indicador = st.sidebar.radio("Indicador", indicadores)
-        # resetar conteúdo do menu lateral
-        st.sidebar.title("⚙️ Configurações")
-        indicador = st.sidebar.radio("Indicador", indicadores)
-        
-        ano = st.selectbox("Ano", anos)
-        excluir_zeros = st.checkbox("Excluir notas ZERO")
-        plot_destaque_alunos(df, indicador, ano, display_in_streamlit=True, remove_zero=excluir_zeros)
+            
+            # resetar conteúdo do menu lateral
+            st.sidebar.title("⚙️ Configurações")
+            indicador = st.sidebar.radio("Indicador", indicadores)
+            
+            ano = st.selectbox("Ano", anos)
+            excluir_zeros = st.checkbox("Excluir notas ZERO")
+            plot_destaque_alunos(df, indicador, ano, display_in_streamlit=True, remove_zero=excluir_zeros)
         
         # subtítulo
         st.write("---")
