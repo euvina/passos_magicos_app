@@ -334,9 +334,6 @@ def show_analysis_page():
         # Exibir radar e gráficos
         plot_radar_aluno(df, aluno, display_in_streamlit=True)
         st.write("<br>", unsafe_allow_html=True)
-        # Exibir radar e gráficos
-        plot_radar_aluno(df, aluno, display_in_streamlit=True)
-        st.write("<br>", unsafe_allow_html=True)
         indicadores = ['INDE', 'IAN', 'IAA', 'IDA', 'IEG', 'IPP', 'IPV']
         with st.expander("⚙️ Configurações"):
             indicador = st.radio("Indicador", indicadores, horizontal=True)
