@@ -286,6 +286,21 @@ def show_analysis_page():
         plot_correlation_heatmap(df, multi_indicadores, display_in_streamlit=True) 
         
     else:
+        if "data_loaded" in st.session_state:
+            df = st.session_state.df
+            stats = st.session_state.stats
+            anos = df['ano'].unique()
+            indicadores = ['INDE', 'IAN', 'IAA', 'IDA', 'IEG', 'IPP', 'IPV']
+            agrupamentos = {'Ano': 'ano',
+                            'Grupo': 'grupo_fase',
+                            'Fase': 'fase',
+                            'Pedra': 'pedra',
+                            'Ponto de Virada': 'ponto_virada',
+                            'Atenção': 'atencao',
+                            'Destaque': 'destaque'}
+        # resetar conteúdo do menu lateral
+        st.sidebar.title("⚙️ Configurações")
+        indicador = st.sidebar.radio("Indicador", indicadores)
         # resetar conteúdo do menu lateral
         st.sidebar.title("⚙️ Configurações")
         indicador = st.sidebar.radio("Indicador", indicadores)
