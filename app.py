@@ -297,7 +297,7 @@ def show_analysis_page():
 
         indicadores = ['INDE', 'IAN', 'IAA', 'IDA', 'IEG', 'IPP', 'IPV']
         with st.expander("⚙️ Configurações"):
-            indicador = st.radio("Indicador", indicadores, horizontal=True
+            indicador = st.radio("Indicador", indicadores, horizontal=True)
         
         st.write("---")
         st.subheader("👩🏾‍🦰 Visão Individual")
