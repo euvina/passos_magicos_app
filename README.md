@@ -7,7 +7,7 @@ Aplicação web desenvolvida com o framework Streamlit para automatizar a análi
 Este projeto faz parte do Datathon, um projeto de conclusão de curso para a Pós-Tech Data Analytics da FIAP, realizado entre junho e agosto de 2024.
 
 - A aplicação pode ser acessada [aqui](https://pm-dash.streamlit.app).
-- O artigo pode ser acessado [aqui](#).
+- O artigo pode ser acessado [aqui]([#](https://medium.com/@viniplima/passos-mágicos-a-educação-como-agente-de-mudança-6d1c01f9b3b5)).
 
 ## Objetivos
 
