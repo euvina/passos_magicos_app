@@ -285,27 +285,27 @@ def show_analysis_page():
         multi_indicadores = st.multiselect("Selecione os indicadores:", indicadores, default=indicadores)
         plot_correlation_heatmap(df, multi_indicadores, display_in_streamlit=True) 
         
-    else:
-        if "data_loaded" in st.session_state:
+    else: 
+        # resetar conteúdo do menu lateral
+        st.sidebar.title("⚙️ Configurações")
+        
+        # Check if data is loaded in session state
+        if "data_loaded" not in st.session_state:
+            df, df_to_verify, df_removed, stats, outliers, initial_shape, final_shape = load_and_process_data(None)
+            st.session_state.df = df
+            st.session_state.stats = stats
+            st.session_state.data_loaded = True
+        else:
             df = st.session_state.df
             stats = st.session_state.stats
-            anos = df['ano'].unique()
-            indicadores = ['INDE', 'IAN', 'IAA', 'IDA', 'IEG', 'IPP', 'IPV']
-            agrupamentos = {'Ano': 'ano',
-                            'Grupo': 'grupo_fase',
-                            'Fase': 'fase', 
-                            'Pedra': 'pedra',
-                            'Ponto de Virada': 'ponto_virada',
-                            'Atenção': 'atencao',
-                            'Destaque': 'destaque'}
-            
-            # resetar conteúdo do menu lateral
-            st.sidebar.title("⚙️ Configurações")
-            indicador = st.sidebar.radio("Indicador", indicadores)
-            
-            ano = st.selectbox("Ano", anos)
-            excluir_zeros = st.checkbox("Excluir notas ZERO")
-            plot_destaque_alunos(df, indicador, ano, display_in_streamlit=True, remove_zero=excluir_zeros)
+
+        indicadores = ['INDE', 'IAN', 'IAA', 'IDA', 'IEG', 'IPP', 'IPV']
+        anos = df['ano'].unique()
+        
+        indicador = st.sidebar.radio("Indicador", indicadores)
+        ano = st.selectbox("Ano", anos)
+        excluir_zeros = st.checkbox("Excluir notas ZERO")
+        plot_destaque_alunos(df, indicador, ano, display_in_streamlit=True, remove_zero=excluir_zeros)
         
         # subtítulo
         st.write("---")
