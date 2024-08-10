@@ -294,8 +294,7 @@ def show_analysis_page():
         else:
             df = st.session_state.df
             stats = st.session_state.stats
-        
-        st.write("---")
+            
         st.subheader("👩🏾‍🦰 Visão Individual")
         # Selecione o aluno
         alunos = df['nome'].unique()
