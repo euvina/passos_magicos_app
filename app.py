@@ -294,10 +294,6 @@ def show_analysis_page():
         else:
             df = st.session_state.df
             stats = st.session_state.stats
-
-        indicadores = ['INDE', 'IAN', 'IAA', 'IDA', 'IEG', 'IPP', 'IPV']
-        with st.expander("⚙️ Configurações"):
-            indicador = st.radio("Indicador", indicadores, horizontal=True)
         
         st.write("---")
         st.subheader("👩🏾‍🦰 Visão Individual")
@@ -339,6 +335,14 @@ def show_analysis_page():
         # Exibir radar e gráficos
         plot_radar_aluno(df, aluno, display_in_streamlit=True)
         st.write("<br>", unsafe_allow_html=True)
+        # Exibir radar e gráficos
+        plot_radar_aluno(df, aluno, display_in_streamlit=True)
+        st.write("<br>", unsafe_allow_html=True)
+        indicadores = ['INDE', 'IAN', 'IAA', 'IDA', 'IEG', 'IPP', 'IPV']
+        with st.expander("⚙️ Configurações"):
+            indicador = st.radio("Indicador", indicadores, horizontal=True)
+        plot_aluno_indicador(df, aluno, indicador, display_in_streamlit=True)
+        plot_aluno_variacao(df, aluno, indicador, display_in_streamlit=True)
         plot_aluno_indicador(df, aluno, indicador, display_in_streamlit=True)
         plot_aluno_variacao(df, aluno, indicador, display_in_streamlit=True)
 
