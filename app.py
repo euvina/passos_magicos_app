@@ -81,7 +81,7 @@ def main():
                                     - coluna <code>ano</code> adicionada através da nomenclatura de colunas (ex. <i>"INDE_<b>2021</b>"</i>).<br>
                                     - coluna <code>nome</code> agora pode apresentar valores duplicados, para informações de diferentes anos.<br>
                                     - colunas <code>turma</code> e <code>fase</code> mantidas separadas, com remoção de colunas desnecessárias.<br>
-                                    - coluna <code>grupo_fase</code> adicionada para identificar alunos escolares (<code>Fases 1-7</code>) e universitários (<code>Fase 8</code>).<br>
+                                    - coluna <code>grupo_fase</code> adicionada para identificar alunos escolares (<code>Fases 0-7</code>) e universitários (<code>Fase 8</code>).<br>
                                     - coluna <code>saiu</code> adicionada para alunos que saíram da instituição.<br>
                                     - coluna <code>atencao</code> adicionada, identifica "atenção" para outliers negativos em relação a dois ou mais indicadores.<br>
                                     - coluna <code>destaque</code> adicionada: identifica "destaque" para outliers positivos em relação a dois ou mais indicadores.<br>
