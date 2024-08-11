@@ -124,9 +124,9 @@ def show_cover_page():
     st.title("Passos Mágicos")
     st.write("""
                 <p style="font-size: 16px">
-                    A <a href="https://passosmagicos.org.br"><b>Passos Mágicos</b></a> é uma associação sem fins lucrativos que atua na cidade de São Paulo, 
-                    com o objetivo de promover a educação e inclusão social de crianças e adolescentes em situação de vulnerabilidade.
-                    A associação oferece atividades educacionais e culturais, com foco em desenvolver habilidades e competências para a vida.
+                    A <a href="https://passosmagicos.org.br"><b>Passos Mágicos</b></a> é uma ONG fundada por Michelle Flues e Dimetri Ivanoff em 1992, no município de Embu-Guaçu — estado de São Paulo.
+                    A associação transforma a vida de crianças e adolescentes através da Educação de qualidade, com apoio psicopedagógico. 
+                    Aqui, a palavra Educação é escrita com “e” maiúsculo, pois vai além da instrução acadêmica — com programas estudantis, psicológicos e culturais.
                 <br></p>
             """, unsafe_allow_html=True)
     st.subheader("✨ O projeto")
