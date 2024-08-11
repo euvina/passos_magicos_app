@@ -339,8 +339,6 @@ def show_analysis_page():
             indicador = st.radio("Indicador", indicadores, horizontal=True)
         plot_aluno_indicador(df, aluno, indicador, display_in_streamlit=True)
         plot_aluno_variacao(df, aluno, indicador, display_in_streamlit=True)
-        plot_aluno_indicador(df, aluno, indicador, display_in_streamlit=True)
-        plot_aluno_variacao(df, aluno, indicador, display_in_streamlit=True)
 
 
 if __name__ == "__main__":
